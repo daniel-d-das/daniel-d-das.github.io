@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FreshFarm Organics ERP | Daniel Das</title>
+  <meta name="description" content="An ERP consulting project for a B2B organic grocer: company profile, three BPMN process models, an Odoo solution design, a full order-to-cash cycle in Odoo, and Industry 4.0 and AI recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="container" aria-label="Main">
+      <a class="brand" href="../index.html">Daniel Das</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="case">
+    <div class="container">
+      <a class="back" href="../index.html#projects">Back to all projects</a>
+
+      <h1>FreshFarm Organics ERP</h1>
+      <p class="case-lede">An ERP consulting engagement for a B2B organic grocer: understand the business, model its processes, design the solution and run it in Odoo.</p>
+
+      <dl class="meta">
+        <div><dt>Course</dt><dd>ERP and Industry 4.0, PGPM</dd></div>
+        <div><dt>Format</dt><dd>Group capstone, two weeks</dd></div>
+        <div><dt>Platform</dt><dd>Odoo ERP</dd></div>
+      </dl>
+
+      <div class="links case-links">
+        <a class="btn btn-primary" href="../assets/erp-final-presentation.pdf">Read the final presentation</a>
+      </div>
+
+      <h2>The challenge</h2>
+      <p>Each team acted as an ERP consulting company for an assigned client and had to take it from business understanding to a working Odoo system. Ours was FreshFarm Organics, a certified-organic grocer that sells fruit, vegetables and dairy to businesses only: grocery chains, restaurants and wholesale traders. Buyers order through a web portal, choose cold-chain, standard or express transport, and pay 50% in advance and 50% on delivery.</p>
+      <p>That model makes the problems concrete. Produce spoils, dairy and leafy greens need an unbroken 2 to 8°C chain, every batch has to trace back to its farm and organic certificate, and a split payment is easy to get wrong when invoices are handled by hand.</p>
+
+      <h2>How we approached it</h2>
+      <ol class="steps">
+        <li><strong>Understand the business.</strong> We wrote a company profile covering the business model, products, customers, suppliers, departments, challenges and growth objectives, and mapped each department to an ERP module.</li>
+        <li><strong>Model the processes.</strong> We drew three BPMN swim-lane models with role-by-role steps: Order-to-Cash, Procure-to-Pay with a quality gate on incoming goods, and a perishable-inventory process built on first-expiry-first-out (FEFO) allocation and batch traceability.</li>
+        <li><strong>Design the solution.</strong> We chose six Odoo modules (Purchase, Inventory, CRM, Sales, Employees and Accounting) and justified each against a problem from the profile. Manufacturing was left out of scope because the range is fruit, vegetables and dairy only.</li>
+        <li><strong>Run it in Odoo.</strong> We set up the company and its master data, then walked one full cycle on a live system: a lead in the CRM pipeline, a quotation, a confirmed sales order, delivery, a customer invoice and payment, followed by the profit and loss report and the dashboards. We recorded it as a demo video.</li>
+        <li><strong>Look ahead.</strong> We closed with three Industry 4.0 initiatives and three AI use cases, sequenced so the data is stable in Odoo before sensors and models are added.</li>
+      </ol>
+
+      <figure class="wide-fig">
+        <img src="../assets/erp-solution-blueprint.jpg" alt="End-to-end ERP solution design for FreshFarm Organics, showing the flow from vendor onboarding through the core Odoo modules to reporting" loading="lazy" onerror="this.closest('figure').remove()">
+        <figcaption>The end-to-end solution blueprint from the final presentation. Open the PDF to zoom in.</figcaption>
+      </figure>
+
+      <h2>What we delivered</h2>
+      <div class="table-wrap">
+        <table class="deliverables">
+          <thead>
+            <tr><th scope="col">Deliverable</th><th scope="col">What it is</th><th scope="col">Where to find it</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Company profile</th>
+              <td>Phase 1, 6 pages: business overview, products, customers, suppliers, departments, challenges and growth objectives.</td>
+              <td><a href="../assets/erp-phase1-company-profile.pdf">Open the PDF</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Process models</th>
+              <td>Phase 2, 6 pages: three BPMN diagrams with the steps for each department or role.</td>
+              <td><a href="../assets/erp-phase2-process-models.pdf">Open the PDF</a></td>
+            </tr>
+            <tr>
+              <th scope="row">ERP solution design</th>
+              <td>Phase 3, 1 page: the recommended Odoo modules, why each is needed and what is out of scope.</td>
+              <td><a href="../assets/erp-phase3-solution-design.pdf">Open the PDF</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Final presentation</th>
+              <td>18 slides for the client's board: business, process flows, module design, eCommerce workflow, Industry 4.0 and AI.</td>
+              <td><a href="../assets/erp-final-presentation.pdf">Open the PDF</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Odoo demo video</th>
+              <td>A five-minute screen recording of the configured system running one full cycle.</td>
+              <td>Available on request</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="wide-fig">
+        <img src="../assets/erp-ceo-dashboard.png" alt="CEO dashboard in Odoo with sales by customer, sales by product, purchase analysis and employees per department" loading="lazy" onerror="this.closest('figure').remove()">
+        <figcaption>The CEO dashboard in the Odoo build, from the demo video.</figcaption>
+      </figure>
+
+      <h2>What we recommended</h2>
+      <ul>
+        <li><strong>Industry 4.0.</strong> IoT sensors for cold-chain monitoring, a blockchain ledger linking each batch to its farm and organic certificate, and RFID or barcode scanning to drive FEFO picking and stock accuracy.</li>
+        <li><strong>AI.</strong> Demand forecasting by product and season, expiry and spoilage alerts that prioritise near-dated lots, and vendor scoring from freshness and rejection history.</li>
+        <li><strong>Sequencing.</strong> Stabilise the data on Odoo first, then add IoT and AI where perishability, cold-chain and traceability risk are highest.</li>
+      </ul>
+
+      <h2>Tools</h2>
+      <ul class="tags">
+        <li>Odoo ERP</li>
+        <li>BPMN</li>
+        <li>Process mapping</li>
+        <li>Presentation deck</li>
+      </ul>
+
+      <p class="note">FreshFarm Organics is a simulated client assigned for a course exercise. Customer and vendor names in the demo data are illustrative, and this project is not affiliated with any real company.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Daniel Das</p>
+      <p><a href="../index.html#projects">Back to all projects</a></p>
+    </div>
+  </footer>
+</body>
+</html>
