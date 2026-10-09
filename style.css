@@ -194,12 +194,18 @@ h2 {
 .deliverables tbody th { font-size: 1rem; border-top: 1px solid var(--rule); }
 .note { font-size: .95rem; color: var(--ink-soft); margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rule); }
 
+.case-links { margin: 28px 0 0; }
+.shots { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px; align-items: start; margin: 32px 0 0; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; height: auto; border: 3px solid var(--ink); border-radius: 4px; background: var(--paper); }
+.shots figcaption { font-size: .95rem; color: var(--ink-soft); margin-top: 10px; }
+
 /* Text still to be filled in. Delete this class once you have replaced the text. */
 .todo { background: rgba(242, 169, 0, .35); padding: 1px 6px; border-radius: 3px; }
 
 @media (max-width: 760px) {
   body { font-size: 1.0625rem; }
-  .project, .about, .skills, .meta { grid-template-columns: minmax(0, 1fr); }
+  .project, .about, .skills, .meta, .shots { grid-template-columns: minmax(0, 1fr); }
   .nav-links { gap: 18px; }
   .corner { width: 26px; height: 26px; }
   .timeline li { grid-template-columns: 4.2rem minmax(0, 1fr); }

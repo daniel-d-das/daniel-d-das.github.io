@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CohortCal | Daniel Das</title>
+  <meta name="description" content="A shared submission calendar for MBA cohorts, taken from problem definition to a working prototype with a free daily digest and optional premium reminders.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="container" aria-label="Main">
+      <a class="brand" href="../index.html">Daniel Das</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="case">
+    <div class="container">
+      <a class="back" href="../index.html#projects">Back to all projects</a>
+
+      <h1>CohortCal</h1>
+      <p class="case-lede">A shared submission calendar for MBA cohorts, taken from problem definition to a working prototype.</p>
+
+      <dl class="meta">
+        <div><dt>Context</dt><dd>MBA coursework, individual assignment</dd></div>
+        <div><dt>Output</dt><dd>Report and working prototype</dd></div>
+      </dl>
+
+      <div class="links case-links">
+        <a class="btn btn-primary" href="https://daniel-d-das.github.io/CohortCal/" target="_blank" rel="noopener">Try the live prototype</a>
+        <a class="text-link" href="https://github.com/daniel-d-das/CohortCal" target="_blank" rel="noopener">View the source on GitHub</a>
+      </div>
+
+      <h2>The problem</h2>
+      <p>At my college, DigiCampus shows classes and sessions on its calendar, but not when assignments and other submissions are due. That leaves students without a calendar view of what they need to hand in, and when.</p>
+
+      <h2>The idea</h2>
+      <p>CohortCal is one shared submission calendar for a whole cohort. Students join by choosing their institution and programme. The Student Council keeps the calendar up to date, everyone gets a free daily digest, and optional premium features add reminders on top.</p>
+
+      <h2>What the prototype does</h2>
+      <ul>
+        <li><strong>Quick sign-up.</strong> Three steps: institution, programme (PGPM or PGDM) and name. Great Lakes is the live institution, with IIM Bangalore and ISB Hyderabad shown as coming soon.</li>
+        <li><strong>Free daily digest.</strong> A card at the top shows how many submissions are due in the next seven days, and the two that are nearest.</li>
+        <li><strong>Cohort calendar.</strong> Submissions are sorted by deadline and colour-coded by subject, with a badge when something is due in two days or less.</li>
+        <li><strong>Student Council mode.</strong> A password-protected mode, unlocked with a demo password in this prototype, where council members add and remove subjects and submissions.</li>
+        <li><strong>Premium reminders.</strong> A demo switch unlocks custom reminder timing, per-subject reminders, per-submission reminders and DM delivery by WhatsApp or email. The most specific setting wins: a submission's own reminder, then its subject's, then the default.</li>
+      </ul>
+      <p>This is a front-end prototype. It runs in the browser with sample data and saves to that browser only, so reminders are not actually sent and calendars are not yet shared between users.</p>
+
+      <div class="shots">
+        <figure>
+          <img src="../assets/cohortcal-calendar.png" alt="CohortCal main screen with the daily digest card and the first submissions on the cohort calendar" loading="lazy" onerror="this.closest('figure').remove()">
+          <figcaption>The free daily digest and the cohort calendar.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/cohortcal-premium.png" alt="CohortCal premium panel showing custom reminder timing, per-subject reminders and DM delivery unlocked in preview mode" loading="lazy" onerror="this.closest('figure').remove()">
+          <figcaption>Premium features, with the demo preview switched on.</figcaption>
+        </figure>
+      </div>
+
+      <h2>Tools</h2>
+      <ul class="tags">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>GitHub Pages</li>
+      </ul>
+
+      <p class="note">CohortCal is an independent student prototype. It is not affiliated with or endorsed by Great Lakes Institute of Management or DigiCampus.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Daniel Das</p>
+      <p><a href="../index.html#projects">Back to all projects</a></p>
+    </div>
+  </footer>
+</body>
+</html>
