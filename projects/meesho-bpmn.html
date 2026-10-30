@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meesho Order Fulfilment | Daniel Das</title>
+  <meta name="description" content="A BPMN 2.0 model of Meesho's online order fulfilment across the customer, platform, seller and logistics partner, with five business rules and three process improvement suggestions for an ERP or order management system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="container" aria-label="Main">
+      <a class="brand" href="../index.html">Daniel Das</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="case">
+    <div class="container">
+      <a class="back" href="../index.html#projects">Back to all projects</a>
+
+      <h1>Meesho Order Fulfilment</h1>
+      <p class="case-lede">A BPMN 2.0 model of how a Meesho order moves between the customer, the platform, the seller and the logistics partner, with the business rules behind it and three ideas for automating it.</p>
+
+      <dl class="meta">
+        <div><dt>Course</dt><dd>ERP and Industry 4.0, PGPM</dd></div>
+        <div><dt>Format</dt><dd>Individual assignment</dd></div>
+        <div><dt>Process</dt><dd>Online order fulfilment, BPMN 2.0</dd></div>
+      </dl>
+
+      <div class="links case-links">
+        <a class="btn btn-primary" href="../assets/meesho-bpmn-assignment.pdf">Read the full write-up</a>
+        <a class="text-link" href="../assets/meesho-business-rules.xlsx">Download the business rules (Excel)</a>
+      </div>
+
+      <h2>The problem</h2>
+      <p>Meesho is a zero-commission marketplace that connects resellers and buyers with a large base of unbranded sellers, and it relies on third-party logistics partners for pickup and last-mile delivery. An order therefore passes through several independent parties, which creates visibility gaps, delayed order confirmations, inconsistent packaging checks and many failed first-attempt deliveries, especially for cash-on-delivery orders in tier-2 and tier-3 markets.</p>
+      <p>The goal was to give management and an ERP implementation team one standard view of the process, so it can be automated in an order management system with clear checkpoints and exception handling.</p>
+
+      <h2>The model</h2>
+      <p>The diagram follows one order from the moment it is placed on the Meesho app. It uses four swim lanes: the customer, the Meesho platform as a system, the seller, and the logistics partner. Three decision gateways (payment valid, stock available, delivery successful) split the flow into four possible endings: delivered, rejected for invalid payment, cancelled because stock was unavailable, or refunded after a failed delivery.</p>
+
+      <figure class="wide-fig full">
+        <div class="scroller">
+          <a href="../assets/meesho-order-fulfilment-bpmn.png"><img src="../assets/meesho-order-fulfilment-bpmn.png" alt="BPMN swim-lane diagram of Meesho online order fulfilment with lanes for the customer, the Meesho platform, the seller and the logistics partner, three decision gateways and four end events" loading="lazy" onerror="this.closest('figure').remove()"></a>
+        </div>
+        <figcaption>The order fulfilment process in BPMN 2.0. Open the image to zoom in.</figcaption>
+      </figure>
+
+      <h2>Business rules</h2>
+      <p>I turned the exceptions into five rules, each with a trigger, an action and a priority, so a system could enforce them. The Excel file also lists the BPMN step, the approving role and the data source for each rule.</p>
+      <div class="table-wrap">
+        <table class="deliverables">
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">What it says</th><th scope="col">Priority</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Payment check</th>
+              <td>If a prepaid payment fails or cannot be verified, reject the order and notify the customer within 15 minutes.</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <th scope="row">Stock check</th>
+              <td>If the item is out of stock at the seller, cancel the order within 2 hours, refund in full if it was prepaid and notify the customer.</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <th scope="row">Seller dispatch deadline</th>
+              <td>The seller must accept, pack and hand over within 48 hours, or the order escalates to Meesho Operations.</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <th scope="row">Packing quality</th>
+              <td>A package that is damaged, wrong or incomplete must be re-packed before handover and cannot ship until it passes.</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <th scope="row">Failed delivery</th>
+              <td>After two failed attempts the logistics partner returns the package to origin, and Meesho refunds the customer within 7 business days of receiving it, with Finance approving the refund.</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What I would improve</h2>
+      <ol class="steps">
+        <li><strong>Automate stock and payment validation.</strong> Connect the order management system to the seller's inventory feed and the payment gateway so both checks happen in real time at checkout, which cuts orders cancelled after checkout.</li>
+        <li><strong>Generate the shipping label in parallel with packing.</strong> Today the label is created after the seller hands the package over. Creating it as soon as the order is forwarded would shorten the time from pickup to dispatch.</li>
+        <li><strong>Join the two exception paths in one dashboard.</strong> Packing failures (handled by sellers) and failed deliveries (handled by logistics partners) are tracked separately. One seller-performance view would flag sellers with high re-pack rates and pin codes with high return-to-origin rates, and support seller coaching or limits on cash on delivery in risky areas.</li>
+      </ol>
+
+      <h2>What I delivered</h2>
+      <div class="table-wrap">
+        <table class="deliverables">
+          <thead>
+            <tr><th scope="col">Deliverable</th><th scope="col">What it is</th><th scope="col">Where to find it</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Written assignment</th>
+              <td>6 pages: business context, scope, the BPMN diagram, business rules and improvement suggestions.</td>
+              <td><a href="../assets/meesho-bpmn-assignment.pdf">Open the PDF</a></td>
+            </tr>
+            <tr>
+              <th scope="row">BPMN diagram</th>
+              <td>The swim-lane model of the full process.</td>
+              <td><a href="../assets/meesho-order-fulfilment-bpmn.png">Open the image</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Business rules register</th>
+              <td>Five rules with trigger, action, approver, priority and data source.</td>
+              <td><a href="../assets/meesho-business-rules.xlsx">Download the Excel file</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Tools</h2>
+      <ul class="tags">
+        <li>BPMN 2.0</li>
+        <li>Process modelling</li>
+        <li>Excel</li>
+      </ul>
+
+      <p class="note">This is an academic exercise based on public information about how Meesho operates. It is not affiliated with or endorsed by Meesho.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Daniel Das</p>
+      <p><a href="../index.html#projects">Back to all projects</a></p>
+    </div>
+  </footer>
+</body>
+</html>
